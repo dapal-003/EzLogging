@@ -56,8 +56,7 @@ def timelog_to_seconds(timeLog):
     '''
     Converts the hh:mm:ss format in seconds
     '''
-    timeLogSplit = timeLog.split(':')
-    print(timeLogSplit)
+    timeLogSplit = timeLog.split('-', 1)[0].split(':')
     hour = int(timeLogSplit[0])
     minute = int(timeLogSplit[1])
     second = int(timeLogSplit[2])
@@ -65,6 +64,9 @@ def timelog_to_seconds(timeLog):
     minute = minute * 60
     return hour + minute + second
 
+
+def length_type(timeLog):
+    return int(timeLog.split('-', 1)[1])
 
 def get_range(seconds, cutBefore, cutAfter):
     start = seconds - cutBefore

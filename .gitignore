@@ -7,8 +7,11 @@ PySideTest.py
 .imdone
 OBS_EzLogging.bat
 *.sublime*
-games.json
 .vscode
 tags
 
 test\.py
+Temp.txt
+NoTextFile
+Processed
+Clips

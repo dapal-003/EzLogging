@@ -14,11 +14,7 @@ class Clip:
             self.originalFile = os.path.join(config.video_path, originalFile)
 
         self.set_seconds()
-        self.start = self.seconds - config.cut_before
-        if self.start < 0:
-            self.start = 0
-        self.end = self.seconds + config.cut_after
-
+        self.get_length()
         self.set_range()
         self.set_seconds()
         self.set_length()
@@ -61,6 +57,31 @@ class Clip:
 
     def set_length(self):
         self.length = self.end - self.start
+
+    def get_length(self):
+        length_type = utils.length_type(self.timeLog)
+        if length_type == 1:
+            cut_before = config.cut_before1
+            cut_after = config.cut_after1
+        elif length_type == 2:
+            cut_before = config.cut_before2
+            cut_after = config.cut_after2
+        elif length_type == 3:
+            cut_before = config.cut_before3
+            cut_after = config.cut_after3
+        elif length_type == 4:
+            cut_before = config.cut_before4
+            cut_after = config.cut_after4
+        elif length_type == 5:
+            cut_before = config.cut_before5
+            cut_after = config.cut_after5
+        else:
+            print("Error no length specified")
+
+        self.start = self.seconds - cut_before
+        if self.start < 0:
+            self.start = 0
+        self.end = self.seconds + cut_after
 
     def export(self):
         if not os.path.exists(os.path.join(config.video_path, 'Clips')):
