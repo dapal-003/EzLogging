@@ -264,11 +264,11 @@ class SettingsDialog(QtWidgets.QDialog):
         #Not having these keys assigned means that the program will crash as it tries to check for key pressed
         startRecord = str(config.start_record) if str(config.start_record) != "None" else "F9"
         stopRecord = str(config.stop_record) if str(config.stop_record) != "None" else "F9"
-        logTime1 = str(config.log_time1) if str(config.log_time) != "None" else "F1"
-        logTime2 = str(config.log_time2) if str(config.log_time) != "None" else "F2"
-        logTime3 = str(config.log_time3) if str(config.log_time) != "None" else "F3"
-        logTime4 = str(config.log_time4) if str(config.log_time) != "None" else "F4"
-        logTime5 = str(config.log_time5) if str(config.log_time) != "None" else "F5"
+        logTime1 = str(config.log_time1) if str(config.log_time1) != "None" else "F1"
+        logTime2 = str(config.log_time2) if str(config.log_time2) != "None" else "F2"
+        logTime3 = str(config.log_time3) if str(config.log_time3) != "None" else "F3"
+        logTime4 = str(config.log_time4) if str(config.log_time4) != "None" else "F4"
+        logTime5 = str(config.log_time5) if str(config.log_time5) != "None" else "F5"
 
         self.startRecordButton.setText(startRecord)
         self.stopRecordButton.setText(stopRecord)
